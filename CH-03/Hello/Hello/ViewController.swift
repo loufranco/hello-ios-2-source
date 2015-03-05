@@ -8,6 +8,16 @@
 
 import UIKit
 
+// Simple model function
+func helloForUser(name: String) -> String {
+    if name.hasPrefix("A") {
+        return "Hi, \(name)"
+    } else {
+        return "Hello, \(name)"
+    }
+}
+
+// View Controller Class
 class ViewController: UIViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!
@@ -26,7 +36,7 @@ class ViewController: UIViewController {
 
 
     @IBAction func sayHello(sender: AnyObject) {
-        self.userNameLabel.text = self.userNameTextField.text
+        self.userNameLabel.text = helloForUser(self.userNameTextField.text)
         self.helloLabel.hidden = false
         self.userNameLabel.hidden = false
     }
